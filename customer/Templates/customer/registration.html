@@ -1,0 +1,182 @@
+{%load static%}
+
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Registration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+ <link rel="stylesheet" type="text/css" href="{% static 'customer/css/style1.css' %}">
+
+</head>
+<body>
+<form id = "form1" action="" method="POST" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+        <div class="header">
+        Customer Registration
+        </div>
+<!-- partial:index.partial.html -->
+    <div id="app">
+        <step-navigation :steps="steps" :currentstep="currentstep">
+        </step-navigation>
+        
+        <div v-show="currentstep == 1">
+            <div class="form-group">Date Registered <font color="red">*</font>
+                <input type="text"  name="date_registered" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')">
+            </div>
+            <div class="form-group">Firstname <font color="red">*</font>
+                <input type="name" name="firstname" class="form-control" required>
+            </div>
+            <div class="form-group">Middlename
+                <input type="name" name="middlename" class="form-control" >
+            </div>
+            <div class="form-group">Lastname <font color="red">*</font>
+                <input type="name" name="lastname" class="form-control"  required>
+            </div>
+            <div class="form-group">E-mail
+                <input type="name" name="email" class="form-control" >
+            </div>
+            <div class="form-group">Password
+
+                <input type="password" name="password" class="form-control">
+            </div>
+            <div class="form-group">Phone Number
+                <input type="name" name="phone" class="form-control" >
+            </div>
+            <div class="form-group">Address
+                <input type="address" name="address" class="form-control">
+            </div>
+            <div class="form-group">Birthdate
+                <input type="text"  name="birthdate" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')">
+            </div>
+             <div class="form-group">Birthplace
+                <input type="name" name="birthplace" class="form-control">
+            </div>
+            <div class="form-group">Gender
+                <input type="name" name="gender" class="form-control">
+            </div>
+            <div class="form-group">Status
+                <select name="status" input="text" name="status" class="dropdwn " >
+                                      <option>--Select--</option>
+                                      <option>Single</option>
+                                      <option>Widow/er</option>
+                                      <option>Divorced</option>
+                </select>
+            </div>
+            <div class="form-group">Spouse's Name
+                <input type="name" name="sname" class="form-control" placeholder="Spouse's Name">
+            </div>
+            <div class="form-group">Spouse Occupation
+                <input type="name" name="sOccu" class="form-control" placeholder="Spouse Occupation">
+            </div>
+            <div class="form-group">Number of Children
+                <input type="name" name="children" class="form-control" placeholder="Number of Children">
+            </div>
+            <div class="form-group">Mother's Full Name
+                <input type="name" name="mother" class="form-control" placeholder="Mother's Full Name">
+            </div>
+            <div class="form-group">Mother's Occupation
+                <input type="name" name="mOccu" class="form-control" placeholder="Mother's Occupation">
+            </div>
+            <div class="form-group">Father's Full Name
+                <input type="name" name="father" class="form-control" placeholder="Father's Name">
+            </div>
+            <div class="form-group">Father's Occupation
+                <input type="name" name="fOccu" class="form-control" placeholder="Father's Occupation">
+            </div>
+            <div class="form-group">Height
+                <input type="text" name="height" class="form-control" placeholder="Height">
+            </div>
+            <div class="form-group">Weight
+                <input type="text" name="weight" class="form-control" placeholder="Weight">
+            </div>
+            <div class="form-group">Religion
+                <input type="text" name="religion" class="form-control" placeholder="Religion">
+            </div>
+
+        </div>
+
+        <div v-show="currentstep == 2">
+            <div class="form-group">
+                <label for="elem">Elementary:</label>
+                <input type="text" name="elem" class="form-control" placeholder="School">
+                <input type="text" name="grade" class="form-control" placeholder="Grade">
+                <input type="text" name="year" class="form-control" placeholder="Year Completed">
+                <input type="text" name="awards" class="form-control" placeholder="Awards">
+
+                <label for="jhs">Junior High School:</label><br>
+                <input type="text" name="hs" class="form-control" placeholder="School">
+                <input type="text" name="grade" class="form-control" placeholder="Grade">
+                <input type="text" name="year" class="form-control" placeholder="Year Completed">
+                <input type="text" name="awards" class="form-control" placeholder="Awards">
+
+                <label for="shs">Senior High School:</label><br>
+                <input type="text" name="elem" class="form-control" placeholder="School">
+                <input type="text" name="grade" class="form-control" placeholder="Grade">
+                <input type="text" name="year" class="form-control" placeholder="Year Completed">
+                <input type="text" name="awards" class="form-control" placeholder="Awards">
+
+                <label for="college">College:</label><br>
+                <input type="text" name="college" class="form-control" placeholder="School">
+                <input type="text" name="grade" class="form-control" placeholder="Grade">
+                <input type="text" name="year" class="form-control" placeholder="Year Completed">
+                <input type="text" name="awards" class="form-control" placeholder="Awards">
+
+                <label for="pcollege">Post College:</label><br> 
+                <input type="text" name="postcollege" class="form-control" placeholder="School">
+                <input type="text" name="grade" class="form-control" placeholder="Grade">
+                <input type="text" name="year" class="form-control" placeholder="Year Completed">
+                <input type="text" name="awards" class="form-control" placeholder="Awards">                   
+            </div>
+        </div>
+
+        <div v-show="currentstep == 3">
+            <label for="prof">Trainings</label>
+            <input type="text" name="title" class="form-control" placeholder="Title"><br>
+            <input type="text" name="sponsor" class="form-control" placeholder="Sponsor"><br>
+            <input type="date" name="date" class="form-control"><br>
+            <input type="text" name="venue" class="form-control" placeholder="Venue"><br>
+        </div>
+
+        <step v-for="step in steps" :currentstep="currentstep" :key="step.id" :step="step" :stepcount="steps.length" @step-change="stepChanged">
+        </step>
+
+        <script type="x-template" id="step-navigation-template">
+            <ol class="step-indicator">
+                <li v-for="step in steps" is="step-navigation-step" :key="step.id" :step="step" :currentstep="currentstep">
+                </li>
+            </ol>
+        </script>
+
+        <script type="x-template" id="step-navigation-step-template">
+            <li :class="indicatorclass">
+                <div class="step"><i :class="step.icon_class"></i></div>
+                <div class="caption hidden-xs hidden-sm">Step <span v-text="step.id"></span>: <span v-text="step.title"></span></div>
+            </li>
+        </script>
+
+        <script type="x-template" id="step-template">
+            <div class="step-wrapper" :class="stepWrapperClass">
+                <button type="button" class="btn btn-primary" @click="lastStep" :disabled="firststep">
+                    Back
+                </button>
+                <button type="button" class="btn btn-primary" @click="nextStep" :disabled="laststep">
+                    Next
+                </button>
+                <button type="submit" class="btn btn-primary" v-if="laststep">
+                    Submit
+                </button>
+            </div>
+        </script>
+    </div>
+</div>
+</form>
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js'></script>
+  <script src="{% static 'customer/js/script.js' %}"></script>
+
+</body>
+</html>
