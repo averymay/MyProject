@@ -1,5 +1,5 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View, TemplateView
 from django.http import HttpResponse
 from .forms import CustomerForm
@@ -45,9 +45,9 @@ class CustomerIndexView(View):
                 sid = request.POST.get("customer-id")
                 cust = Customer.objects.filter(person_ptr_id=sid).delete()
                 pers = Person.objects.filter(id = sid).delete()
-                print('recorded deleted')
-        return HttpResponse ('post')
-        #return redirect('customer:customer_index_view')
+                print('record deleted')
+        #return HttpResponse ('post')
+        return redirect('customer:index_view')
         #for customer in customers:
          #   print(customer)
           #  print(customer.id)
