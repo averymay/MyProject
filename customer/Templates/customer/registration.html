@@ -43,7 +43,7 @@
             <div class="form-group">
                 <label>Date Registered</label>
                 <font color="red">*</font>
-                <input type="text"  name="date_registered" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')">
+                <input type="text"  name="date_registered" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" required>
             </div>
             <div class="form-group">
                 <label>Firstname</label>
@@ -61,40 +61,47 @@
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="name" name="email" class="form-control" >
+                <font color="red">*</font>
+                <input type="name" name="email" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control">
+                <font color="red">*</font>
+                <input type="password" name="password" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Phone Number</label>
-                <input type="name" name="phone" class="form-control" >
+                <font color="red">*</font>
+                <input type="name" name="phone" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Address</label>
-                <input type="address" name="address" class="form-control">
+                <font color="red">*</font>
+                <input type="address" name="address" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Birthdate</label>
-                <input type="text"  name="birthdate" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')">
+                <font color="red">*</font>
+                <input type="text"  name="birthdate" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" required>
             </div>
              <div class="form-group">
                 <label>Birthplace</label>
-                <input type="name" name="birthplace" class="form-control">
+                <font color="red">*</font>
+                <input type="name" name="birthplace" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Gender</label>
-                <select name="gender" input="text" name="gender" class="dropdwn " >
+                <font color="red">*</font>
+                <select name="gender" input="text" name="gender" class="dropdwn " required>
                                       <option>--Select--</option>
                                       <option>Male</option>
                                       <option>Female</option>
-                                      <option>Binary</option>
                 </select>
             </div>
             <div class="form-group">
                 <label>Status</label>
-                <select name="status" input="text" name="status" class="dropdwn " >
+                <font color="red">*</font>
+                <select name="status" input="text" name="status" class="dropdwn" required>
                                       <option>--Select--</option>
                                       <option>Single</option>
                                       <option>Widow/er</option>
