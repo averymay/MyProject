@@ -84,8 +84,7 @@ class CustomerRegisterView(View):
                                   birthdate = birthdate, birthplace = birthplace, gender = gender, status = status, email = email , password = password)
             form.save()
 
-            return HttpResponse('Customer record saved!')            
-            # return render(request,'successpage.html')
+            return render(request,'customer/successpage.html')
             # except:
             #   raise Http404
         else:
